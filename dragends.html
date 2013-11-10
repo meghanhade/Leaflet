@@ -52,7 +52,9 @@ var t = Math.floor(10*Math.random())
 		marker.addTo(map);
 		
 
-// "Dragend" triggers an event when the marker is moved--at the end of the move, at the "drag end". The dragend triggers the random selection of a new phrase for the popup message using the same math.random method.
+// "Dragend" triggers an event when the marker is moved--at the end of the move. 
+// The dragend triggers the random selection of a new phrase for the popup message 
+// using the same math.random method.
     
  
 marker.on('dragend', ondragend);
