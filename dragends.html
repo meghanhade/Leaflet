@@ -4,9 +4,7 @@
 	</head>
 	<body>
 		<div id='map'></div><script type='text/javascript'>
-		
-// The "r_text" variable is an array of phrase options that will be used as popup messages.
-	
+			
 
 			var r_text = [
 			  "Here there's a river that winds on forever",
@@ -23,8 +21,7 @@
 		</script>      
 		
 		<script type='text/javascript'>
-
-// "Var map" adds basemap information.		
+		
 		
 			var map = L.mapbox.map('map', 'm365.map-e3lks16p', {
 				gridLayer: {},
@@ -34,26 +31,16 @@
 				})
 				.setView([44.9, -93], 3);
 
-// "Var marker" is the marker information. For a moveable marker, set draggable: to "true".
-
 			var marker = L.marker(new L.LatLng(44.9833, -93.2667), {
 				icon: L.mapbox.marker.icon({'marker-color': 'CC0033'}),
 				draggable: true
 				});
 
-// "Var marker" adds a marker to the map, and "marker.bindPopup" determines that a popup is 
-// attached to this marker. The text displyed in the popup is "var t", and "var t" has a nested method, 
-// "math.floor", which randomly selects one phrase from "r_text".
 
 		  var t = Math.floor(10*Math.random())
 			  marker.bindPopup(r_text[t]);
 			  marker.addTo(map);
 		
-
-// "Dragend" triggers an event when the marker is moved--at the end of the move. 
-// The dragend triggers the random selection of a new phrase for the popup message 
-// using the same math.random method.
-    
  
 		  marker.on('dragend', ondragend);
  
@@ -61,7 +48,7 @@
  			var t = Math.floor(10*Math.random())
     	marker.bindPopup(r_text[t]);
 			marker.addTo(map);
-			}    
+		}    
 
 		</script>
 	</body>
