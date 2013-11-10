@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id='map'></div><script type='text/javascript'>
+
+		var r_text = new Array ();
+	
+		r_text[0] = "Here there's a river that winds on forever";
+		r_text[1] = "Here there's an island where all things are silent";
+		r_text[2] = "Here there's a mountain that no man has mounted";
+		r_text[3] = "Here there's a desert that size can't be measured";
+		r_text[4] = "Here there's a land that time don't command";
+		r_text[5] = "Here there are strangers, and all kinds of danger";
+		r_text[6] = "Here there's an island coast where the only souls you'll see are ghosts";
+      r_text[7] = "Here there's a place where the treeline breaks into wide open space";
+      r_text[8] = "Here there's a moonlit lake where a cold wind blows and your bones start to shake";
+      r_text[9] = "Here there's a winding road in the deep of the night, near the edge of the known";
+      
+      
+      
+      
+		
+		</script>
+		
+		<script type='text/javascript'>
+var map = L.mapbox.map('map', 'm365.map-e3lks16p', {
+		gridLayer: {},
+		gridControl: {
+		sanitizer: function(x) { console.log(x); return x; }
+		}
+		})
+		.setView([44.9, -93], 3);
+
+		var marker = L.marker(new L.LatLng(44.9833, -93.2667), {
+					icon: L.mapbox.marker.icon({'marker-color': 'CC0033'}),
+					draggable: true
+				});
+
+var t = Math.floor(10*Math.random())
+		marker.bindPopup(r_text[t]);
+		marker.addTo(map);
+		
+
+ 
+    
+ 
+marker.on('dragend', ondragend);
+ 
+function ondragend(e) {
+ var t = Math.floor(10*Math.random())
+    marker.bindPopup(r_text[t]);
+		marker.addTo(map);
+  
+}
+          
+          
+
+
+
+		</script>
+	</body>
+</html>
