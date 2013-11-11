@@ -7,23 +7,22 @@
 
 			var r_text = [
 			  "Here there's a river that winds on forever",
-				"Here there's an island where all things are silent",
-				"Here there's a mountain that no man has mounted",
-				"Here there's a desert that size can't be measured",
-				"Here there's a land that time don't command",
-				"Here there are strangers, and all kinds of danger",
-				"Here there's an island coast where the only souls you'll see are ghosts",
-	      "Here there's a place where the treeline breaks into wide open space",
-	      "Here there's a moonlit lake where a cold wind blows and your bones start to shake",
-	      "Here there's a winding road in the deep of the night, near the edge of the known",
+			  "Here there's an island where all things are silent",
+			  "Here there's a mountain that no man has mounted",
+			  "Here there's a desert that size can't be measured",
+			  "Here there's a land that time don't command",
+			  "Here there are strangers, and all kinds of danger",
+			  "Here there's an island coast where the only souls you'll see are ghosts",
+			  "Here there's a place where the treeline breaks into wide open space",
+			  "Here there's a moonlit lake where a cold wind blows and your bones start to shake",
+			  "Here there's a winding road in the deep of the night, near the edge of the known",
 			];
-		</script>      
+		</script>
 		
 		<script type='text/javascript'>
 		
-		
 			var map = L.mapbox.map('map', 'm365.map-e3lks16p', {
-				gridLayer: {},
+			  gridLayer: {},
 				gridControl: {
 				sanitizer: function(x) { console.log(x); return x; }
 				}
@@ -38,14 +37,13 @@
 			  marker.bindPopup(r_text[t]);
 			  marker.addTo(map);
 		
+			  marker.on('dragend', ondragend);
  
-		  marker.on('dragend', ondragend);
- 
-		  function ondragend(e) {
- 			  var t = Math.floor(r_text.length*Math.random())
-    	  marker.bindPopup(r_text[t]);
-			  marker.addTo(map);
-		  }    
+      function ondragend(e) {
+        var t = Math.floor(r_text.length*Math.random())
+        marker.bindPopup(r_text[t]);
+        marker.addTo(map);
+      }
 
 		</script>
 	</body>
