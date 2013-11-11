@@ -32,17 +32,16 @@
         icon: L.mapbox.marker.icon({'marker-color': 'CC0033'}),
         draggable: true
         });
-        var t = Math.floor(r_text.length*Math.random())
-        marker.bindPopup(r_text[t]);
-        marker.addTo(map);
         
-        marker.on('dragend', ondragend);
-        
-      function ondragend(e) {
+      function updatemarker() {
         var t = Math.floor(r_text.length*Math.random())
         marker.bindPopup(r_text[t]);
         marker.addTo(map);
       }
+      
+      updatemarker();
+      
+      marker.on('dragend',updatemarker);
 
     </script>
   </body>
