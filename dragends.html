@@ -33,15 +33,15 @@
         draggable: true
         });
         
-      function updatemarker() {
+      function updateMarker() {
         var t = Math.floor(r_text.length*Math.random())
         marker.bindPopup(r_text[t]);
         marker.addTo(map);
       }
       
-      updatemarker();
+      updateMarker();
       
-      marker.on('dragend',updatemarker);
+      marker.on('dragend',updateMarker);
 
     </script>
   </body>
